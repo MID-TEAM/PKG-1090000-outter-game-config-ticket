@@ -53,26 +53,22 @@ class Ticket extends OutterGameConfigService\Basic
             $layer['data']['p33_alr_role_code'],
             $config['data']['p93_ogc_quota'],
             $this->game_category);
-        if ($layer['data']['p33_alr_role_code'] == 'ROLE1') {
-            /* 取得遠端帳號 */
-            $remote_account = $this->pharaoh_api->checkCreateAccount();
-            if ($remote_account['code']) {
-                return $this->return_tool->returnMsg($remote_account['code'], ['data' => $remote_account['data']], __FILE__, __LINE__);
-            }
-            /* END 取得遠端帳號 */
-            /* 取得點數、額度 */
-            if ($remote_account['data']) {
-                $point = $this->pharaoh_api->accountPoint();
-                $point = $point['data']['credit'];
-            }
-            /* END 取得點數、額度 */
+        /* 取得遠端帳號 */
+        $remote_account = $this->pharaoh_api->checkCreateAccount();
+        if ($remote_account['code']) {
+            return $this->return_tool->returnMsg($remote_account['code'], ['data' => $remote_account['data']], __FILE__, __LINE__);
         }
-        if ($layer['data']['p33_alr_role_code'] == 'ROLE1' && $account['data']['p32_bch_type'] == 1) {
-            /* 取得範本 */
-            $game_template = $this->pharaoh_api->stakeTemplate();
-            $game_template = $game_template['data'];
-            /* END 取得範本 */
+        /* END 取得遠端帳號 */
+        /* 取得點數、額度 */
+        if ($remote_account['data']) {
+            $point = $this->pharaoh_api->accountPoint();
+            $point = $point['data']['credit'];
         }
+        /* END 取得點數、額度 */
+        /* 取得範本 */
+        $game_template = $this->pharaoh_api->stakeTemplate();
+        $game_template = $game_template['data'];
+        /* END 取得範本 */
         $return_data = [
             'config'        => $config['data'],
             'point'         => $point,
@@ -109,21 +105,19 @@ class Ticket extends OutterGameConfigService\Basic
             $parent_config = \App::make(\Mid\OutterGameConfigBasic\Collection\Basic::class)->getConfigBYP33AntIdP93OgcGameCategory($layer['data']['p33_alr_parent_p33_ant_id'], $this->game_category);
             $parent_config = $parent_config['data'];
         }
-        if ($layer['data']['p33_alr_role_code'] == 'ROLE1' && $account['data']['p32_bch_type'] == 1) {
-            /* 取得遠端帳號 */
-            $remote_account = $this->pharaoh_api->checkCreateAccount();
-            if ($remote_account['code']) {
-                return $remote_account;
-            }
-            /* END 取得遠端帳號 */
-            /* 取得點數 */
-            $point = $point['data']['credit'];
-            /* END 取得點數 */
-            /* 取得範本 */
-            $game_template = $this->pharaoh_api->stakeTemplate();
-            $game_template = $game_template['data'];
-            /* END 取得範本 */
+        /* 取得遠端帳號 */
+        $remote_account = $this->pharaoh_api->checkCreateAccount();
+        if ($remote_account['code']) {
+            return $remote_account;
         }
+        /* END 取得遠端帳號 */
+        /* 取得點數 */
+        $point = $point['data']['credit'];
+        /* END 取得點數 */
+        /* 取得範本 */
+        $game_template = $this->pharaoh_api->stakeTemplate();
+        $game_template = $game_template['data'];
+        /* END 取得範本 */
         $return_data = [
             'config'        => $config['data'],
             'point'         => $point,
