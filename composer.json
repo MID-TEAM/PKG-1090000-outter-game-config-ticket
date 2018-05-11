@@ -1,0 +1,19 @@
+{
+  "type": "package",
+  "name": "mid/PKG-1090000-outter-game-config-ticket",
+  "version": "2.0.0",
+  "authors": [
+    {
+      "name": "don",
+      "email": "don@suote.com.tw"
+    }
+  ],
+  "autoload": {
+    "classmap": [
+      "/"
+    ]
+  },
+  "require": {
+  }
+}
+
