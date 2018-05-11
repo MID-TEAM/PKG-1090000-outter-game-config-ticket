@@ -55,7 +55,7 @@ class Ticket extends OutterGameConfigService\Basic
             $this->game_category);
         if ($layer['data']['p33_alr_role_code'] == 'ROLE1') {
             /* 取得遠端帳號 */
-            $remote_account = $this->pharaoh_api->accountInfo();
+            $remote_account = $this->pharaoh_api->checkCreateAccount();
             if ($remote_account['code']) {
                 return $this->return_tool->returnMsg($remote_account['code'], ['data' => $remote_account['data']], __FILE__, __LINE__);
             }
@@ -111,7 +111,7 @@ class Ticket extends OutterGameConfigService\Basic
         }
         if ($layer['data']['p33_alr_role_code'] == 'ROLE1' && $account['data']['p32_bch_type'] == 1) {
             /* 取得遠端帳號 */
-            $remote_account = $this->pharaoh_api->accountInfo();
+            $remote_account = $this->pharaoh_api->checkCreateAccount();
             if ($remote_account['code']) {
                 return $remote_account;
             }
