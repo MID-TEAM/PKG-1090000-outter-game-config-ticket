@@ -129,9 +129,12 @@ class ApiVar2 extends P93GameApiVar2 implements IP93GameApiVar2
             return $this->sendAPI(LotteryUserInfoRequestDTO::class, $sendData, 1090001);
         } elseif ($this->bchType == 2) {
             $res = $this->sendAPI(LotteryCreditLimitInfoRequestDTO::class, $sendData, 1090001);
-            if (isset($res['data']['currentCredit'])) {
-                $res['data']['credit'] = $res['data']['currentCredit'];
-                unset($res['data']['currentCredit']);
+            if (count($res['data']) > 0) {
+                $res['data'] = [
+                    'account'     => $res['data'][0]['account'],
+                    'creditLimit' => $res['data'][0]['creditLimit'],
+                    'credit'      => $res['data'][0]['currentCredit']
+                ];
             }
 
             return $res;
