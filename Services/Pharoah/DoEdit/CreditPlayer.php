@@ -10,15 +10,6 @@ class CreditPlayer extends DoEdit
     {
         $this->validDoEditCommission($request, TraitHelperP109::getP109AllGameTypeCode());
         $validate_column = TraitHelperP109::getP109AllGameTypeCode();
-        //刪除原範本
-        \DB::table('p109_outter_game_config_ticket_template')->where('p109_ogctt_p93_ogc_id', $result['data']['account_config']['p93_ogc_id'])->delete();
-        //寫入新範本
-        $insert_data = [
-            'p109_ogctt_example_type' => $request['p109_ogctt_example_type'],
-            'p109_ogctt_p93_ogc_id'   => $result['data']['account_config']['p93_ogc_id']
-        ];
-        $this->common_model->insert('p109_outter_game_config_ticket_template', 'p109_ogctt', $insert_data);
-        $log_template_insert_data[] = $insert_data;
         $config_detail_collection = \App::make(\Mid\OutterGameConfigBasic\Collection\Detail::class);
         foreach ($validate_column AS $val) {
             $parent_percent = 0;
