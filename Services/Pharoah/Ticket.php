@@ -81,7 +81,11 @@ class Ticket extends OutterGameConfigService\Basic
             $return_data['current_point'] = $point;
         }
         if ($account['data']['p32_bch_type'] == 2) {
-            $return_data['current_quota'] = $point;
+            if ($layer['data']['p33_alr_role_code'] == 'ROLE1') {
+                $return_data['current_quota'] = $point;
+            } else {
+                $return_data['current_quota'] = $return_data['parent_config']['p93_ogc_quota'] - $return_data['config']['p93_ogc_quota'];
+            }
         }
 
         return $this->return_tool->returnMsg(0, ['data' => $return_data], __FILE__, __LINE__);
