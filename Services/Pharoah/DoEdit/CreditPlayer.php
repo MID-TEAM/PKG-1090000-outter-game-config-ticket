@@ -8,12 +8,6 @@ class CreditPlayer extends DoEdit
 {
     public function doEdit($request, $result)
     {
-        /* 範本 */
-        $game_template = $this->api_lib->stakeTemplate()['data'] ?? null;
-        $this->checkData($game_template, 1090002, ['text' => ['common' => \Lang::get("Mid\\CommonTools::errors/common.common") . '(1090002)']]);
-        $game_template = $this->coordinateTemplate($game_template); //整理範本
-        /* END 範本 */
-        $this->validDoEdit($request, $result, $game_template);
         $this->validDoEditCommission($request, TraitHelperP109::getP109AllGameTypeCode());
         $validate_column = TraitHelperP109::getP109AllGameTypeCode();
         //刪除原範本
