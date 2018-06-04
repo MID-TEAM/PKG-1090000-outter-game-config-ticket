@@ -449,4 +449,33 @@ class ApiVar2 extends P93GameApiVar2 implements IP93GameApiVar2
     {
         // TODO: Implement assignAllPercent() method.
     }
+
+    /**
+     * 一次設定多人信用額度
+     * @param string $playerList 用逗號串起來的帳號字串
+     * @param int $creditPoint
+     */
+    public function multipleAssignQuota(string $playerList, int $creditPoint)
+    {
+        $sendData = [
+            'account'     => $playerList,
+            'creditLimit' => $creditPoint
+        ];
+
+        return $this->sendAPI(LotterySetUserCreditRequestDTO::class, $sendData);
+    }
+
+    /**
+     * 踢多玩家下線
+     * @param string $playerList
+     * @return mixed
+     */
+    public function multipleKickOutPlayer(string $playerList)
+    {
+        $sendData = [
+            'account' => $playerList
+        ];
+
+        return $this->sendAPI(LotteryKickUserRequestDTO::class, $sendData);
+    }
 }
