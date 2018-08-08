@@ -443,10 +443,22 @@ class ApiVar2 extends P93GameApiVar2 implements IP93GameApiVar2
 
     /**
      * 設定所有佔成
+     *
+     * @param string $account    [會員帳號]
+     * @param mixed  $gameConfig [大總監佔成設定]
      * @return mixed
      */
-    public function assignAllPercent()
+    public function assignAllPercent(string $account, $gameConfig)
     {
-        // TODO: Implement assignAllPercent() method.
+        $this->account = $account;
+        $gameConfig = collect($gameConfig['data']['p93_outter_game_config_detail']);
+        foreach (config('OutterGameConfigTicket.constant.gameType') as $lotteryType => $game) {
+            //搜尋成數
+            $configDetail = $gameConfig->Where('p93_ogcd_game_type', $game['code'])->first();
+            $percent = $configDetail['p93_ogcd_percent'] ?? 0;
+            $percent = ($percent > 0) ? $percent / 100 : 0 ;
+            $this->setLotteryType($lotteryType);
+            $this->assignPercent($percent);
+        }
     }
 }
