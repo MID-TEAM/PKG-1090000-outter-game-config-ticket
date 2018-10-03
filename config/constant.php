@@ -30,6 +30,11 @@ return [
             'code' => 'BJHAPPY8',
             'name' => 'bj_happy8',
             'chi'  => '北京快樂8',
+        ],
+        '88889' => [
+            'code' => 'SPEEDCAR',
+            'name' => 'sp_car',
+            'chi'  => '極速賽車',
         ]
     ]
 ];

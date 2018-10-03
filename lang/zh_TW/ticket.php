@@ -8,5 +8,6 @@ return [
     CQLOTTO               => '重慶時時彩',
     BJPK10                => '北京PK10',
     BINGO                 => '賓果賓果',
-    BJHAPPY8              => '北京快樂8'
+    BJHAPPY8              => '北京快樂8',
+    SPEEDCAR              => '極速賽車',
 ];
