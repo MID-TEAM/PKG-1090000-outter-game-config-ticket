@@ -10,7 +10,12 @@ class SettingController
 
     function __construct()
     {
-        $this->service = app(\Mid\OutterGameConfigTicket\Services\Pharoah\Ticket::class, [GameApiVar2Factory::createByGuid(PHALT, request()->get('p33_ant_guid'))]);
+        if (request()->has('p33_ant_guid') &&  request()->get('p33_ant_guid') != null) {
+            $this->service = app(\Mid\OutterGameConfigTicket\Services\Pharoah\Ticket::class, [GameApiVar2Factory::createByGuid(PHALT, request()->get('p33_ant_guid'))]);
+        } else {
+            $member = config('Initial.global.account');
+            $this->service = app(\Mid\OutterGameConfigTicket\Services\Pharoah\Ticket::class, [GameApiVar2Factory::create(PHALT, $member['p33_ant_id'], $member['p33_ant_p32_bch_id'])]);
+        }
     }
 
     public function show()
