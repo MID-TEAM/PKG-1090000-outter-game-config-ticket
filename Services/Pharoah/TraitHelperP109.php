@@ -11,7 +11,7 @@ trait TraitHelperP109
      */
     public static function getP109GameType($gameType)
     {
-        return config('OutterGameConfigTicket.constant.gameType.' . $gameType);
+        return self::getTicketGameTypeInformation()[$gameType];
     }
 
     /**
@@ -20,7 +20,7 @@ trait TraitHelperP109
      */
     public static function getP109AllGameType()
     {
-        $all = config('OutterGameConfigTicket.constant.gameType');
+        $all = self::getTicketGameTypeInformation();
         $res = collect($all)->keys()->toArray();
 
         return $res;
@@ -32,7 +32,7 @@ trait TraitHelperP109
      */
     public static function getP109AllGameTypeCode()
     {
-        $all = config('OutterGameConfigTicket.constant.gameType');
+        $all = self::getTicketGameTypeInformation();
         $res = collect($all)->map(function ($item) {
             return $item['code'];
         })->toArray();
@@ -47,7 +47,52 @@ trait TraitHelperP109
      */
     public static function getP109GameTypeCode($gameType)
     {
-        return config('OutterGameConfigTicket.constant.gameType.' . $gameType . '.code');
+        return self::getTicketGameTypeInformation()[$gameType]['code'];
     }
 
+    /**
+     * 取得彩票遊戲資訊 (同 config / constant.php)
+     *
+     * @return array
+     */
+    public static function getTicketGameTypeInformation()
+    {
+        return [
+            '10003' => [
+                'code' => 'TJLOTTO',
+                'name' => 'tj_lottery',
+                'chi'  => '天津時時彩',
+            ],
+            '10004' => [
+                'code' => 'XJLOTTO',
+                'name' => 'xj_lottery',
+                'chi'  => '新疆時時彩',
+            ],
+            '10011' => [
+                'code' => 'CQLOTTO',
+                'name' => 'cq_lottery',
+                'chi'  => '重慶時時彩',
+            ],
+            '10016' => [
+                'code' => 'BJPK10',
+                'name' => 'bj_pk10',
+                'chi'  => '北京PK10',
+            ],
+            '20001' => [
+                'code' => 'BINGO',
+                'name' => 'bingo',
+                'chi'  => '賓果賓果',
+            ],
+            '20002' => [
+                'code' => 'BJHAPPY8',
+                'name' => 'bj_happy8',
+                'chi'  => '北京快樂8',
+            ],
+            '88889' => [
+                'code' => 'SPEEDCAR',
+                'name' => 'sp_car',
+                'chi'  => '極速賽車',
+            ]
+        ];
+    }
 }
