@@ -6,3 +6,4 @@ define('BJPK10', 'BJPK10');         //北京PK10
 define('BINGO', 'BINGO');           //賓果賓果
 define('BJHAPPY8', 'BJHAPPY8');     //北京快樂8
 define('SPEEDCAR', 'SPEEDCAR');     //極速賽車
+define('WELFARE3D', 'WELFARE3D');   //福彩3D

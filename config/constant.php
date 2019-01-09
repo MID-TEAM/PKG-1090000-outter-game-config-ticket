@@ -35,6 +35,11 @@ return [
             'code' => 'SPEEDCAR',
             'name' => 'sp_car',
             'chi'  => '極速賽車',
+        ],
+        '20005' => [
+            'code' => 'WELFARE3D',
+            'name' => 'welfare_3d',
+            'chi'  => '福彩3D',
         ]
     ]
 ];
