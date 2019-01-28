@@ -10,4 +10,5 @@ return [
     BINGO                 => '賓果賓果',
     BJHAPPY8              => '北京快樂8',
     SPEEDCAR              => '極速賽車',
+    WELFARE3D             => '福彩3D',
 ];
