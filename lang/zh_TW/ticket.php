@@ -11,4 +11,10 @@ return [
     BJHAPPY8              => '北京快樂8',
     SPEEDCAR              => '極速賽車',
     WELFARE3D             => '福彩3D',
+    LUCKYAIRSHIP          => '幸運飛艇',
+    GUANGDONG             => '廣東11選5',
+    XINJIANG              => '新疆11選5',
+    SHANGHAI              => '上海11選5',
+    SHANDONG              => '山東11選5',
+    JIANGXI               => '江西11選5',
 ];
