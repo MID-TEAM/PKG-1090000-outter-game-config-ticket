@@ -92,7 +92,42 @@ trait TraitHelperP109
                 'code' => 'SPEEDCAR',
                 'name' => 'sp_car',
                 'chi'  => '極速賽車',
-            ]
+            ],
+            '20005' => [
+                'code' => 'WELFARE3D',
+                'name' => 'welfare_3d',
+                'chi'  => '福彩3D',
+            ],
+            '10017' => [
+                'code' => 'LUCKYAIRSHIP',
+                'name' => 'lucky_airship',
+                'chi'  => '幸運飛艇',
+            ],
+            '30001' => [
+                'code' => 'GUANGDONG',
+                'name' => 'guang_dong',
+                'chi'  => '廣東11選5',
+            ],
+            '30004' => [
+                'code' => 'XINJIANG',
+                'name' => 'xin_jiang',
+                'chi'  => '新疆11選5',
+            ],
+            '30005' => [
+                'code' => 'SHANGHAI',
+                'name' => 'shang_hai',
+                'chi'  => '上海11選5',
+            ],
+            '30008' => [
+                'code' => 'SHANDONG',
+                'name' => 'shan_dong',
+                'chi'  => '山東11選5',
+            ],
+            '30015' => [
+                'code' => 'JIANGXI',
+                'name' => 'jiang_xi',
+                'chi'  => '江西11選5',
+            ],
         ];
     }
 }
