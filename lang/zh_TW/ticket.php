@@ -17,4 +17,9 @@ return [
     SHANGHAI              => '上海11選5',
     SHANDONG              => '山東11選5',
     JIANGXI               => '江西11選5',
+    BEIJINGF3             => '北京快3',
+    JIANGSUF3             => '江蘇快3',
+    GUANGXIF3             => '廣西快3',
+    JILINF3               => '吉林快3',
+    HENANF3               => '河南快3',
 ];
