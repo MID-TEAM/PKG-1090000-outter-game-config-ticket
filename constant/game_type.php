@@ -13,3 +13,8 @@ define('XINJIANG', 'XINJIANG');           //新疆11選5
 define('SHANGHAI', 'SHANGHAI');           //上海11選5
 define('SHANDONG', 'SHANDONG');           //山東11選5
 define('JIANGXI', 'JIANGXI');             //江西11選5
+define('BEIJINGF3', 'BEIJINGF3');         //北京快3
+define('JIANGSUF3', 'JIANGSUF3');         //江蘇快3
+define('GUANGXIF3', 'GUANGXIF3');         //廣西快3
+define('JILINF3', 'JILINF3');             //吉林快3
+define('HENANF3', 'HENANF3');             //河南快3

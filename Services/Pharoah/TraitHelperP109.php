@@ -128,6 +128,31 @@ trait TraitHelperP109
                 'name' => 'jiang_xi',
                 'chi'  => '江西11選5',
             ],
+            '40002' => [
+                'code' => 'BEIJINGF3',
+                'name' => 'beijing_f3',
+                'chi'  => '北京快3',
+            ],
+            '40007' => [
+                'code' => 'JIANGSUF3',
+                'name' => 'jiangsu_f3',
+                'chi'  => '江蘇快3',
+            ],
+            '40010' => [
+                'code' => 'GUANGXIF3',
+                'name' => 'guangxi_f3',
+                'chi'  => '廣西快3',
+            ],
+            '40012' => [
+                'code' => 'JILINF3',
+                'name' => 'jilin_f3',
+                'chi'  => '吉林快3',
+            ],
+            '40017' => [
+                'code' => 'HENANF3',
+                'name' => 'hanan_f3',
+                'chi'  => '河南快3',
+            ],
         ];
     }
 }
