@@ -25,6 +25,7 @@ use Mid\CommonTools\Utils\JsonUtility;
 use Mid\OutterGameConfigBasic\Libraries\Pharoah\IP93GameApiVar2;
 use Mid\OutterGameConfigBasic\Libraries\Pharoah\P93GameApiVar2;
 use Mid\PlatformOrder\Service\Order\p77PlatformOrder;
+use Mid\OutterGameConfigTicket\Services\Pharoah\TraitHelperP109;
 
 class ApiVar2 extends P93GameApiVar2 implements IP93GameApiVar2
 {
@@ -452,7 +453,7 @@ class ApiVar2 extends P93GameApiVar2 implements IP93GameApiVar2
     {
         $this->account = $account;
         $gameConfig = collect($gameConfig['data']['p93_outter_game_config_detail']);
-        foreach (config('OutterGameConfigTicket.constant.gameType') as $lotteryType => $game) {
+        foreach (TraitHelperP109::getTicketGameTypeInformation() as $lotteryType => $game) {
             //搜尋成數
             $configDetail = $gameConfig->Where('p93_ogcd_game_type', $game['code'])->first();
             $percent = $configDetail['p93_ogcd_percent'] ?? 0;
