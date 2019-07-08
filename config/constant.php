@@ -95,6 +95,11 @@ return [
             'code' => 'HENANF3',
             'name' => 'hanan_f3',
             'chi'  => '河南快3',
+        ],
+        '10006' => [
+            'code' => 'AUSTRALIA5',
+            'name' => 'australia_5',
+            'chi'  => '澳洲幸運5',
         ]
     ]
 ];
