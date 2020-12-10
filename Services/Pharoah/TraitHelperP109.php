@@ -158,6 +158,16 @@ trait TraitHelperP109
                 'name' => 'australia_5',
                 'chi'  => '澳洲幸運5',
             ],
+            '10018' => [
+                'code' => 'SGAIRSHIP',
+                'name' => 'sg_airship',
+                'chi'  => 'SG飛艇',
+            ],
+            '10019' => [
+                'code' => 'AUSTRALIA10',
+                'name' => 'australia_10',
+                'chi'  => '澳洲幸運10',
+            ],
         ];
     }
 }
