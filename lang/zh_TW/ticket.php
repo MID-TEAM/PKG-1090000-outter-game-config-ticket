@@ -23,4 +23,6 @@ return [
     JILINF3               => '吉林快3',
     HENANF3               => '河南快3',
     AUSTRALIA5            => '澳洲幸運5',
+    SGAIRSHIP             => 'SG飛艇',
+    AUSTRALIA10           => '澳洲幸運10',
 ];

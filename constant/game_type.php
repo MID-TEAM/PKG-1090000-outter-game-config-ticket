@@ -19,3 +19,5 @@ define('GUANGXIF3', 'GUANGXIF3');         //廣西快3
 define('JILINF3', 'JILINF3');             //吉林快3
 define('HENANF3', 'HENANF3');             //河南快3
 define('AUSTRALIA5', 'AUSTRALIA5');       //澳洲幸運5
+define('SGAIRSHIP', 'SGAIRSHIP');         //SG飛艇
+define('AUSTRALIA10', 'AUSTRALIA10');     //澳洲幸運10
